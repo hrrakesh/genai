@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ username }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #42f5ef,#f5880c); /* Modify colors as needed */
+        }
+
+        header {
+            background-color: #050505;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+			background-color: #050505;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        nav ul li a.active {
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #b6dbc0;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+        }
+
+        .content {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .image-container, .video-container {
+            width: 48%;
+            padding: 30px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+		
+        .image {
+            max-width: 100%;
+            max-height: 300px; /* Adjust as needed */
+            overflow: hidden;
+        }
+
+        .video {
+            max-width: 90%;
+            max-height: 300px; /* Adjust as needed */
+            overflow: hidden;
+        }
+
+        .error {
+            display: none;
+            color: red;
+        }
+
+        .video-container {
+            margin-top: 20px; /* Add margin for separation */
+        }
+
+        footer {
+            background-color: #050505;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Fix image size */
+        #image-preview {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Fix video size */
+        #video-preview {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/home" class="active">GenAI</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>User Content Viewer</h1>
+
+        <div class="content">
+            <div class="image-container">
+                <h2>Image</h2>
+                <div class="image">
+                    <img id="image-preview" src="" alt="User Image">
+                    <p id="image-error" class="error">No image found</p>
+                </div>
+            </div>
+            <div class="video-container">
+                <h2>Video</h2>
+                <div class="video">
+                    <video id="video-preview" controls>
+                        <source src="" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p id="video-error" class="error">No video found</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 GenAI</p>
+    </footer>
+
+    <script>
+        var username = "{{ username }}"; // Get the username from the HTML template
+
+        var imagePreview = document.getElementById("image-preview");
+        var imageError = document.getElementById("image-error");
+        var videoPreview = document.getElementById("video-preview");
+        var videoError = document.getElementById("video-error");
+
+        imagePreview.src = "/static/img_gen/" + username + ".png";
+        videoPreview.src = "/static/AI_Caption_Video/" + username + ".mp4";
+
+        imagePreview.onload = function() {
+            imagePreview.style.display = "block"; // Display the image if loaded successfully
+        };
+
+        imagePreview.onerror = function() {
+            imageError.style.display = "block"; // Show error message if image not found
+        };
+
+        videoPreview.onerror = function() {
+            videoError.style.display = "block"; // Show error message if video not found
+        };
+    </script>
+
+</body>
+</html>

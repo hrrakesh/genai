@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css') }}">
+    <title>Sign Up </title>
+	<script>
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+            
+        });
+
+        document.addEventListener('keydown', function (e) {
+            // Check if Ctrl + U or F12 is pressed
+            if ((e.ctrlKey || e.metaKey) && (e.key === 'u' || e.key === 'U')) {
+                e.preventDefault();
+                
+            }
+
+            if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+                e.preventDefault();
+                
+            }
+        });
+    </script>
+</head>
+<body>
+<div class="get-flashed-messages">
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <script>
+        window.onload = function() {
+          var messageList = {{ messages | tojson }};
+          if (messageList.length > 0) {
+            var messageString = "";
+            messageList.forEach(function(message) {
+              messageString += message + "\n";
+            });
+            alert(messageString);
+          }
+        };
+      </script>
+    {% endif %}
+  {% endwith %}
+</div>
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-6">
+                <div class="card">
+                    <article class="card-body">
+                        <h4 class="card-title mb-4 mt-1">Sign Up </h4>
+                        <form method="POST">
+                            <div class="form-group">
+                                <label>Username</label>
+                                
+                            <input name="username" class="form-control" placeholder="Username" type="text" autocomplete="off" oninput="this.value = this.value.replace(/[^a-zA-Z0-9]/g, '')">
+
+							</div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input name="email" class="form-control" placeholder="Email" type="email" autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input name="password" class="form-control" placeholder="******" type="password" autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-block"> Create Account  </button>
+                            </div>
+                            {% if error %}
+                                <div class="alert alert-danger">
+                                    {{ error }}
+                                </div>
+                            {% endif %}
+                        </form>
+						<div class="mt-4">
+                            <p>Already have an account? <a href="{{ url_for('login') }}" >Log in here</a></p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

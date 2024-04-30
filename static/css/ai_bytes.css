@@ -1,0 +1,111 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #a4c3f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #f4f4f4 3px solid;
+}
+
+header h1 {
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+main {
+    padding: 20px;
+}
+
+form {
+    background: #fff;
+    padding: 50px;
+    margin: 40px 0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+}
+
+form input[type="text"] {
+    width: 70%;
+    padding: 10px;
+    border: #ddd 1px solid;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+form button {
+    display: inline-block;
+    background: red;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #555;
+}
+
+.video-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+video {
+    width: 90%;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.3);
+}
+
+
+.btn-custom {
+            background-color: #1cc88a;
+            border-color: #1cc88a;
+            color: white;
+        }
+
+.btn-custom:hover {
+	background-color: #17a673;
+	border-color: #169963;
+}
+
+.navbar {
+    /* Your custom styles for the navbar */
+}
+
+.navbar-dark {
+    background-color: #4e73df; /* Fallback color */
+	background-image: linear-gradient(to right,#d4cd0b,#0b83d4);
+	color: white;
+}
+
+.navbar-dark .navbar-brand {
+    color: #fff; /* White color for the navbar brand */
+}
+
+.navbar-dark .navbar-brand:hover {
+    color: #ccc; /* Lighter color on hover */
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Image Generation</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+   <link rel="stylesheet" type="text/css" href="../static/css/image_gen_styles.css">
+   <script>
+        /*document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+            
+        });
+
+        document.addEventListener('keydown', function (e) {
+            // Check if Ctrl + U or F12 is pressed
+            if ((e.ctrlKey || e.metaKey) && (e.key === 'u' || e.key === 'U')) {
+                e.preventDefault();
+                
+            }
+
+            if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+                e.preventDefault();
+                
+            }
+        });*/
+    </script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="/home">GenAI</a>
+        <a class="navbar-brand">Welcome, {{ username }}!</a>
+    </div>
+</nav>
+
+<div class="container mt-5 pt-5">
+    <h1 class="mb-3 text-center">Generate Your Image</h1>
+    <form id="imageForm" method="post">
+        <div class="form-group">
+            <label for="img_description">Image Description:</label>
+            <input type="text" class="form-control custom-input" id="img_description" name="img_description" required autocomplete="off">
+        </div>
+        <div class="form-group">
+            <label for="image_size">Select Image Size:</label>
+            <select class="form-control custom-input" id="image_size" name="image_size">
+                {% for size in image_size_options %}
+                    <option value="{{ size }}">{{ size }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Generate Image</button>
+        
+    </form>
+
+    <div class="image-container">
+        <div class="img-box">
+            <img src="{{ generated_img_path }}" alt="Give caption..." >
+        </div>
+    </div>
+</div>
+
+<footer class="footer text-center bg-dark">
+    <div class="container">
+        <span class="text-white">Developed by GenAI © 2024</span>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

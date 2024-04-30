@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Video Generator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ai_bytes.css') }}">
+    
+    <script>
+	
+       /* window.onload = function() {
+            alert("In case of failure, a blank video is available until then. Don't refresh the page. If this is the case, contact GenAi team.");
+            alert("Please don't refresh the page. It may take 3-4mins to render video. Don't refresh or tab switch.");
+        };
+
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
+
+        document.addEventListener('keydown', function (e) {
+            // Check if Ctrl + U or F12 is pressed
+            if ((e.ctrlKey || e.metaKey) && (e.key === 'u' || e.key === 'U')) {
+                e.preventDefault();
+            }
+
+            if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+                e.preventDefault();
+            }
+        });*/
+    </script>
+</head>
+<body>
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+        
+		<span class="navbar-brand me-auto"><a href="/home" style="text-decoration: none; color: white;">GenAI</a></span>
+
+
+
+        <div class="navbar-brand me-auto ">AI Image Caption Video</div>
+<div class="navbar-brand ms-auto">Hi RAKESH!</div>
+
+    </div>
+</nav>
+
+
+    <div class="container">
+	
+        <main>
+            <form action="/ai_caption" method="post" enctype="multipart/form-data">
+			*Provide Image below 
+                <input class="form-control mb-2" type="file" name="file" accept="image/*">
+				 
+                <button type="submit" class="btn btn-custom" value="Upload">Upload</button>
+            </form>
+            {% if video_generated %}
+                <div class="video-container">
+                    <video controls>
+                        <source src="{{ url_for('static', filename='AI_Caption_Video/' + username + '.mp4') }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            {% endif %}
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

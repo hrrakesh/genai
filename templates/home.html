@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <title>Home</title>
+    <style>
+        body {
+            padding-top: 56px;
+            background-color: #fff; /* White background */
+            color: #000; /* Black text color */
+        }
+        .navbar {
+            background-color: #000; /* Black background for navbar */
+        }
+        .navbar-brand,
+        .nav-link {
+            color: #fff !important; /* White text color */
+        }
+        .dropdown-item {
+            color: #000 !important; /* Black text color for dropdown items */
+        }
+        .navbar-toggler-icon {
+            color: white; /* White color for navbar-toggler icon */
+        }
+        .card {
+            color: #000; /* Black text color inside cards */
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+
+        <div class="container">
+		
+            <a class="navbar-brand" href="/home">GenAI</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+             <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                  <!--  <li class="nav-item">
+                        <a class="nav-link" href="/chatbot">
+                            <i class="fa fa-comments feature-icon"></i>Legal Assistance
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/image_generation">
+                            <i class="fa fa-paint-brush feature-icon"></i>Image Generation
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/audio_transcript">
+                            <i class="fa fa-book"></i>Audio Transcript
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ai_caption">
+                            <i class="fa fa-microphone"></i>AI voice
+                        </a>
+                    </li> -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownProfile" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{ username }}
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownProfile">
+                            <a class="dropdown-item" href="/profile_view">Profile</a>
+                            <a class="dropdown-item" href="/history_load">History</a>
+                            <a class="dropdown-item" href="/logout">
+                                <i class="fa fa-sign-out"></i> Logout
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fa fa-comments feature-icon"></i>  Legal Assistance</h5>
+                                <p class="card-text">Legal Assistance Aspects Using GPT3.5</p>
+                                <a href="/chat_assistance_info" class="btn btn-primary">Assistance</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fa fa-paint-brush feature-icon"></i>  Image Generation</h5>
+                                <p class="card-text">Know more about Dall-e-2,3 with cutting edge Tech</p>
+                                <a href="/image_gen_info" class="btn btn-primary">Image Gen</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fa fa-book"></i>  Audio Transcript</h5>
+                                <p class="card-text">Want to know what is there in your Audio File</p>
+                                <a href="/audio_transcript_info" class="btn btn-primary">Audio Transcript</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fa fa-microphone"></i>  AI voice</h5>
+                                <p class="card-text">Advance Ai caption with Voice over</p>
+                                <a href="/ai_voice_info" class="btn btn-primary">AI Voice</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

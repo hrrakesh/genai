@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> GenAI</title>
+	<script>
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+            
+        });
+
+        document.addEventListener('keydown', function (e) {
+            // Check if Ctrl + U or F12 is pressed
+            if ((e.ctrlKey || e.metaKey) && (e.key === 'u' || e.key === 'U')) {
+                e.preventDefault();
+                
+            }
+
+            if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+                e.preventDefault();
+                
+            }
+        });
+    </script>
+    <style>
+        /* Body styles */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        /* Main container styles */
+        .container {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Message box styles */
+        .message-box {
+            background-color: #ff4444; /* Red background color */
+            color: #fff; /* White text color */
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        /* Footer styles */
+        .footer {
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        .contact-link {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>We Are Experiencing High Demand </h1>
+        <div class="message-box">
+            <p>Sorry, we are working on it. Please try again later.</p>
+        </div>
+    </div>
+    <div class="footer">
+        <p>For more help, <a class="contact-link" href=" ">contact GenAI </a>.</p>
+    </div>
+</body>
+</html>

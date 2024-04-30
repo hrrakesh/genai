@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Open+Sans:wght@500;700&display=swap" rel="stylesheet">
+    <script>
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+            
+        });
+
+        document.addEventListener('keydown', function (e) {
+            // Check if Ctrl + U or F12 is pressed
+            if ((e.ctrlKey || e.metaKey) && (e.key === 'u' || e.key === 'U')) {
+                e.preventDefault();
+                
+            }
+
+            if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+                e.preventDefault();
+                
+            }
+        });
+    </script>
+	<style>
+        :root {
+            --primary-color: #4a148c; /* Deep purple */
+            --secondary-color: #ff9800; /* Bright orange */
+            --text-color: #37474f; /* Darker shade of grey */
+            --background-color: #f5f5f5; /* Light grey */
+            --font-primary: 'Poppins', sans-serif; /* Switch to Poppins for a modern feel */
+            --font-secondary: 'Open Sans', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: var(--font-primary);
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        .navbar {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        .navbar .brand {
+            font-size: 1.8em;
+            font-family: var(--font-secondary);
+            text-decoration: none;
+            color: white;
+        }
+
+        .profile-card {
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+            max-width: 350px;
+            margin: 40px auto;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .profile-card img {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border: 4px solid var(--secondary-color);
+            margin-top: -60px;
+        }
+
+        .profile-card h2 {
+            font-family: var(--font-secondary);
+            margin: 10px 0;
+            font-size: 1.6em;
+            color: var(--text-color);
+        }
+
+        .profile-card p {
+            font-size: 1em;
+            margin: 5px 0;
+            color: var(--text-color);
+        }
+
+        .icon {
+            color: var(--primary-color);
+            margin-right: 8px;
+        }
+
+        @media screen and (max-width: 600px) {
+            .navbar, .profile-card {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+		.button {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: var(--font-primary);
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: var(--primary-color);
+        }
+
+        /* Style for the file input */
+        .file-input {
+            margin: 10px 0;
+        }
+
+        .file-input input[type="file"] {
+            padding: 10px;
+            background-color: var(--background-color);
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: var(--font-primary);
+        }
+
+        .file-input input[type="submit"] {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a class="brand" href="/home">GenAI</a>
+    </nav>
+
+    <div class="profile-card">
+        <!-- Display the uploaded image -->
+        <img src="{{ image_file }}" alt="User Image" id="profileImage">
+        
+        <!-- Image Upload Form -->
+        <form action="/upload-image" method="post" enctype="multipart/form-data" class="file-input">
+            <input type="file" name="profile_image" accept="image/*" onchange="previewImage(this);">
+            <input type="submit" value="Upload" class="button">
+        </form>
+
+        <h2>{{ username }}</h2>
+        <p><i class="fas fa-envelope icon"></i>{{ user_details }}</p>
+        <p><i class="fas fa-images icon"></i>Image Limit: {{ user_image }} times left!</p>
+		<p><i class="fas fa-microphone icon"></i>AI Caption Limit: {{ user_ai_voice_limit }} times left!</p>
+        <p><i class="fas fa-clock icon"></i>Last login: {% if last_login %}{{ last_login }}{% else %}Not available{% endif %}</p>
+    </div>
+
+    <script>
+        function previewImage(input) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById('profileImage').src = e.target.result;
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    </script>
+</body>
+</html>

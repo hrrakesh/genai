@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GenAI Landing Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/landing_page.css') }}">
+    
+    
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">GenAI</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about_us">About Us</a>
+                    </li>
+
+                    
+                    
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container text-center">
+        <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+            <main role="main" class="inner cover">
+                <h1 class="cover-heading">Welcome to GenAI</h1>
+                <p class="lead">Your gateway to the future of generative artificial intelligence, where creativity meets technology. Explore the boundless possibilities of AI in generating content, art, and solutions.</p>
+                <p class="lead">
+                    <a href="#" class="btn btn-lg btn-secondary">Learn More</a>
+                </p>
+            </main>
+        </div>
+    </div>
+
+    
+        <!-------------card1-------------------->
+    <div class="card-main-content">
+        <div class="card-cotainer-1 card-container-11">
+
+           
+            <div class="card-1">
+                <div class="card-image-1">
+                    <img style="height: 240px;"  src="../static/BGimage/legal_assistance.png" alt="">
+                </div>
+                <div class="card-image-content">
+                    <h4>Legal Assistance</h4>
+                    <p class="lead-card-btn">
+                        <a href="#" class="btn btn-lg btn-secondary" id="card-1-btn-1" >Learn More</a>
+                    </p>
+
+                </div>
+            </div>
+            <div class="card-content">
+                <h1>Legal Assistance</h1>
+                <p>Legal assistance AI chat assistance provides users with quick and reliable support for various legal inquiries.
+                    </p>
+            </div>
+        </div>
+
+        <!-------------card2-------------------->
+
+        <div class="card-cotainer-1 ">
+
+           
+            <div class="card-content">
+                <h1>Image Generation</h1>
+                <p>Image generation refers to the process of creating visual content. It encompasses various techniques ranging 
+                    from traditional digital art to cutting-edge deep learning models such as Generative Adversarial Networks (GANs) 
+                    and Variational Autoencoders (VAEs).  </p>
+                
+            </div>
+
+            <div class="card-1">
+                <div class="card-image-1">
+                    <img style="height: 240px;" src="../static/BGimage/image_gen.png" alt="">
+                </div>
+                <div class="card-image-content">
+                    <h4>Image Generation</h4>
+                    <p class="lead-card-btn">
+                        <a href="#" class="btn btn-lg btn-secondary " id="card-1-btn-2" >Learn More</a>
+                    </p>
+
+                </div>
+                
+            </div>
+
+        </div>
+
+         <!-------------card3-------------------->
+        <div class="card-cotainer-1 card-container-3">
+
+           
+            <div class="card-1">
+                <div class="card-image-1">
+                    <img  style="height: 240px;" src="../static/BGimage/audio_trans.png" alt="">
+                </div>
+                <div class="card-image-content">
+                    <h4>Audio Transcript</h4>
+                    <p class="lead-card-btn">
+                        <a href="#" class="btn btn-lg btn-secondary" id="card-1-btn-3" >Learn More</a>
+                    </p>
+                </div>
+                
+            </div>
+            <div class="card-content">
+                <h1>Audio Transcript</h1>
+                <p>Audio transcript AI, powered by cutting-edge natural language processing algorithms, 
+                    transforms spoken language into written text with remarkable accuracy and efficiency. 
+                     From transcribing meetings and interviews to converting podcasts and lectures into searchable text archives,
+					 </p>
+                
+            </div>
+        </div>
+
+         <!-------------card4-------------------->
+
+         <div class="card-cotainer-1 ">
+
+           
+            <div class="card-content">
+                <h1>AI Voice Over Bytes</h1>
+                <p>AI voice with image caption generation combines the power of natural 
+                    language processing and computer vision to create a seamless interaction between auditory and visual information.
+                     By leveragingAI systems can not only recognize and describe the contents of images but also 
+                     generate accurate and contextually relevant captions. </p>
+                    
+                
+            </div>
+
+            <div class="card-1">
+                <div class="card-image-1 card-image-11">
+                    <img src="../static/BGimage/landing_page.jpg" alt="">
+                </div>
+                <div class="card-image-content">
+                    <h4>AI Voice Over Bytes</h4>
+                    <p class="lead-card-btn">
+                        <a href="#" class="btn btn-lg btn-secondary" id="card-1-btn-4" >Learn More</a>
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+        <!-------popup---------->
+        <div class="popup">
+            <div class="popup-content">
+                <i class="fa-solid fa-circle-xmark "></i>
+                <p class="lead-card-btn-popup">
+                   <div class="lead-card-btn-h1">
+                        <h1>Oops!! please SignIN</h1>
+                   </div>
+                    <a href="{{ url_for('login') }}" class="btn btn-lg btn-secondary">SignIN</a>
+                </p>
+            </div>
+        </div>
+
+
+
+
+
+    
+
+    <footer class="footer">
+        <div class="container">
+            <span>&copy; 2024 GenAI. All Rights Reserved.</span>
+        </div>
+    </footer>
+    
+	<script src="{{ url_for('static', filename='js/landing_page.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

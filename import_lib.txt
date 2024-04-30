@@ -1,0 +1,7 @@
+flask
+flask_sqlalchemy
+werkzeug
+openai
+moviepy
+mutagen
+pip install -r import_lib.txt

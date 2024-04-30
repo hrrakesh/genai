@@ -1,0 +1,58 @@
+body {
+    background: linear-gradient(to right, #FF416C, #03a9fc);
+    color: white; /* Changed text color to black */
+}
+
+.container {
+    max-width: 600px;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    line-height: 60px;
+}
+
+.image-container {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.img-box {
+    border: 1px solid #fff;
+    border-radius: 0.25rem;
+    overflow: hidden;
+}
+.bg-dark {
+    background-color: #212529 !important;
+}
+
+.img-box img {
+	 margin-top: 2rem;
+    margin-bottom: 5rem;
+    max-width: 94%;
+    height: 50%; /* Adjust the percentage as needed */
+}
+
+.custom-input {
+    background-color: #fff; /* Changed input background color to white */
+    color: #000; /* Changed input text color to black */
+    border: none;
+}
+
+.custom-input:focus {
+    background-color: #f8f9fa; /* Changed input background color on focus */
+    color: #000; /* Changed input text color on focus */
+    border: none;
+}
+
+.btn-primary {
+    background-color: #007bff; /* Changed primary button background color */
+    border-color: #007bff; /* Changed primary button border color */
+}
+
+.btn-secondary {
+    background-color: #6c757d; /* Changed secondary button background color */
+    border-color: #6c757d; /* Changed secondary button border color */
+}

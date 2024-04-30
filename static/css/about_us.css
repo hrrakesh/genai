@@ -1,0 +1,116 @@
+
+        body {
+            padding-top: 56px;
+            
+        }
+        .card {
+            
+            transition: transform 0.5s ease, box-shadow 0.5s ease; /* Smooth transition for card */
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 30px;
+            color: #fff;
+            /* box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); */
+            box-shadow: 0 4px 20px rgba(0,0,0,.4);
+            
+            background: linear-gradient(to right, #2980b9, #82ccdd, #8e44ad, #2ecc71);
+             background-size: 500% 100%;
+            animation: gradient 10s linear infinite;
+            text-align: center;
+        }
+        .profile-image{
+            width: 20%;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            
+        }
+        .card:hover {
+            transform: translateY(-10px); /* Moves the card up slightly */
+            box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.9);
+            
+        }
+        .card-text-hidden{
+            display: none;
+        }
+        .card:hover .card-text {
+            display: none; /* Hide original text */
+        }
+        .card:hover .card-text-hidden {
+            display: block; /* Show new text */
+        }
+        
+        
+        .navbar{
+            position: relative;
+            top: -60px;
+        }
+
+        .team-section {
+            padding: 50px 0;
+        }
+        .team-section h2 {
+            text-align: center;
+            margin-bottom: 50px;
+            font-weight: bold;
+        }
+        .profile-image {
+            max-width: 50%; /* Make sure the image is responsive */
+            border-radius: 50%; /* Circular image */
+            margin-bottom: 20px;
+            display: block; 
+            margin:10px auto 0 auto ;
+            outline: 2px solid white;
+            border: 1px solid black;
+        }
+        #typing-text::after {
+            content: '|'; /* Add cursor */
+            animation: blink 1s infinite; /* Make the cursor blink */
+        }
+        @keyframes blink {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+        }
+        
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        
+
+  
+
+        @keyframes gradient {
+    0% {
+      background-position: 0 50%
+    }
+    25% {
+      background-position: 25% 50%
+    }
+    50% {
+      background-position: 50% 50%
+    }
+    75% {
+      background-position: 75% 50%
+    }
+    100% {
+      background-position: 100% 50%
+    }
+  }
+        
+   

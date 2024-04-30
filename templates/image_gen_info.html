@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Generation</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      padding-top: 56px; /* Adjust according to the height of the navbar */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 100vh;
+      text-align: center;
+    }
+    .navbar {
+      background-color: #000;
+      color: #fff;
+    }
+    .navbar-brand {
+      color: #fff !important;
+    }
+    .footer {
+      background-color: black;
+      padding: 20px 0;
+	  color: white;
+	  
+    }
+    .suggestion-box {
+      background-color: white;
+      padding: 10px;
+      border-top: 1px solid #dee2e6;
+    }
+    .suggestion {
+      display: inline-block;
+      background-color: orange;
+      color: #fff;
+      padding: 8px 12px;
+      margin: 5px;
+      border-radius: 15px;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" >Image Generation</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item ">
+          <a class="nav-link" href="/home">Home</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/image_generation">Explore with Dalle-2</a>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <h1>No need to paint or edit .. just use dalle-2</h1>
+  <p>
+    DALL-E is an AI model developed by OpenAI capable of generating images from textual descriptions. It uses advanced techniques to understand and visualize a wide range of concepts, making it a powerful tool for creative image generation.
+      </p> 
+</div>
+<div class="suggestion-box">
+  <div class="container text-center">
+    <div class="suggestion">Human vs. Robot Chess Match</div>
+    <div class="suggestion">AI Driving Experience</div>
+    <div class="suggestion">Robot Assistance in Daily Life</div>
+    <div class="suggestion">Human-AI Collaboration in Problem Solving</div>
+	<div class="suggestion">Blue color Apple on table</div>
+	<div class="suggestion">big Tyre Cycle</div>
+  </div>
+</div>
+<footer class="footer">
+  <div class="container text-center">
+    <p>&copy; 2024 GenAI</p>
+  </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

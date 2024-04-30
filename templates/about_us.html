@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - GenAI</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about_us.css') }}">
+    
+</head>
+<body>
+    <nav class="navbar  navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">GenAI</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+        </div>
+    </nav>
+
+    <section class="team-section">
+        <h2 id="typing-text"></h2>
+        <div class="container">
+            
+            <div class="row "> 
+                <!-- Card for Front-end UI Designer -->
+                <div class="col-md-6">
+                    <div class="card">
+                        <img  src="/static/BGimage/front.png" alt="Front-end Designer" class="profile-image card-img-top"  >
+                        <div class="card-body">
+                            <h5 class="card-title">Siddartha R</h5>
+                            <p class="card-text">Front-end Developer and  UI Designer </p>
+                            <p class="card-text-hidden" >siddarthsiddu@gmail1974.com // 7892322456</p>
+
+                            </div>
+                    </div>
+                </div>
+                <!-- Card for Back-end ML Model Designer -->
+                <div class="col-md-6">
+                    <div class="card">
+                        <img src="/static/BGimage/front.png" alt="Back-end ML Designer" class="profile-image card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Rakesh H R</h5>
+                            <p class="card-text">Back-end Developer and ML Model Designer</p>
+                            <p class="card-text-hidden" >mandyarakesh23@gmail.com // 6363514920</p>
+
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <span>&copy; 2023 GenAI. All Rights Reserved.</span>
+        </div>
+    </footer>
+    <script>
+        const sentences = [
+         
+    "AI is changing the world.",
+    "Leveraging GPT can enhance creativity.",
+    "GPT-like AI can generate human-like text.",
+    "The potential of AI is immense."
+  ];
+
+  let currentSentenceIndex = 0;
+  let currentCharacterIndex = 0;
+  let typingSpeed = 100; // Adjust the typing speed here (in milliseconds)
+
+  function typeNextCharacter() {
+    const sentence = sentences[currentSentenceIndex];
+    const typingText = sentence.slice(0, currentCharacterIndex + 1);
+    document.getElementById('typing-text').textContent = typingText;
+
+    if (currentCharacterIndex < sentence.length) {
+      currentCharacterIndex++;
+      setTimeout(typeNextCharacter, typingSpeed);
+    } else {
+      setTimeout(eraseSentence, 1500); // Adjust the delay before erasing the sentence
+    }
+  }
+
+  function eraseSentence() {
+    const sentence = sentences[currentSentenceIndex];
+    const erasingText = sentence.slice(0, currentCharacterIndex);
+    document.getElementById('typing-text').textContent = erasingText;
+   
+  
+
+    if (currentCharacterIndex > 0) {
+      currentCharacterIndex--;
+      setTimeout(eraseSentence, typingSpeed / 2); // Adjust the erasing speed
+    } else {
+        document.getElementById('typing-text').textContent += '';
+        
+      
+      currentSentenceIndex = (currentSentenceIndex + 1) % sentences.length;
+      setTimeout(typeNextCharacter, 500); // Adjust the delay before typing the next sentence
+    }
+  }
+
+  typeNextCharacter();
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

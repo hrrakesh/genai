@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Not Found</title>
+	<script>
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+            
+        });
+
+        document.addEventListener('keydown', function (e) {
+            // Check if Ctrl + U or F12 is pressed
+            if ((e.ctrlKey || e.metaKey) && (e.key === 'u' || e.key === 'U')) {
+                e.preventDefault();
+                
+            }
+
+            if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+                e.preventDefault();
+                
+            }
+        });
+    </script>
+    <style>
+        body {
+            text-align: center;
+            padding: 50px;
+            font-family: "Arial", sans-serif;
+        }
+
+        h1 {
+            font-size: 50px;
+        }
+
+        body {
+            background-color: #f2f2f2;
+        }
+
+        .message {
+            display: inline-block;
+            text-align: left;
+            line-height: 1.8;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>404</h1>
+    <div class="message">
+        <h2>Page Not Found</h2>
+        <p>Sorry, the page you are looking for could not be found. Please check the URL or return to the GenAI  <a href="/GenAI">homepage</a>.</p>
+    </div>
+</body>
+</html>

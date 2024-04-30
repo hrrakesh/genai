@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ChatBot</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chatbot_styles.css') }}">
+	<script>
+       /* document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+            
+        });
+
+        document.addEventListener('keydown', function (e) {
+            // Check if Ctrl + U or F12 is pressed
+            if ((e.ctrlKey || e.metaKey) && (e.key === 'u' || e.key === 'U')) {
+                e.preventDefault();
+                
+            }
+
+            if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+                e.preventDefault();
+                
+            }
+        });*/
+    </script>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/home">GenAI</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto"> <!-- Changed ml-auto to mr-auto to move username to the right -->
+                    <!-- Username -->
+                    <li class="nav-item">
+                         <a class="nav-link" >Hi <span class="username">{{ username }}!</span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="text-center logo mb-4">
+            <h1>LEGAL ASSISTANCE</h1>
+        </div>
+
+        <div id="chat-container" class="mb-4">
+            <div id="chat" class="border p-3 mb-3"></div>
+            <div id="user-input-container" class="input-group">
+                <input type="text" id="user-input" class="form-control" placeholder="Type your message..." autofocus>
+                <div class="input-group-append">
+                    <button id="send-button" type="button" class="btn btn-primary">Send</button>
+                    <button id="clear-button" type="button" class="btn btn-primary">Clear</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="chat-assistant-footer">
+        <div id="footer" class="text-center mt-4">
+            &copy; This bot is powered by OpenAI API key | This bot may produce inaccurate information about people, places, or facts. Please contact a qualified individual for better legal advice.| 2024 |
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and Popper.js (Optional) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- Your custom script -->
+    <script src="{{ url_for('static', filename='js/chatbot_script.js') }}"></script>
+    <script>
+        // Add Enter key functionality to send message
+        document.getElementById('user-input').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                document.getElementById('send-button').click();
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            var inputText = document.getElementById("user-input");
+            var chatContainer = document.getElementById("chat");
+            var clearButton = document.getElementById("clear-button");
+
+            clearButton.addEventListener("click", function() {
+                inputText.value = "";
+                chatContainer.innerHTML = "";
+            });
+        });
+    </script>
+</body>
+</html>
