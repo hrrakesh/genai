@@ -1,4 +1,4 @@
-openai_api_key = "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"
+openai_api_key = "your_api"
 
 chatbot_model_id = "gpt-3.5-turbo"
 audio_model_name = "whisper-1"
